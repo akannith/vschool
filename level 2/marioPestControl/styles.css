@@ -1,0 +1,82 @@
+header{
+    width: auto;
+}
+.title {
+    justify-content: center;
+}
+
+header img {
+    margin: 15px auto 10px;
+    display: inline-block;
+}
+header h1 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    color: darkred;
+    text-shadow: 3px 2px 5px black;
+}
+main{
+    justify-content: center;
+    text-align: center;
+    background-image: url(princess\ peach\ castle.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    font-weight: bold;
+}
+.price {
+    list-style: none;
+}
+#coins {
+    margin: 5px;
+    display: inline;
+}
+#totalCost {
+    display: inline;
+}
+footer {
+    text-align: center;
+    justify-content: space-evenly;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    cursor: pointer;
+    color: darkred;
+}
+footer p {
+    padding: 3px;
+}
+#superstar {
+    height: 50px;
+    float: left;
+    margin: 20px;
+}
+#yoshi {
+    height: 50px;
+    float: right;
+    margin: 20px;
+}
+@media only screen and (min-width: 550px){
+    header{
+        font-size: 60px;
+        background-color: khaki;
+    }
+    body{
+        background-color: lightcoral;
+    }
+    main{
+        background-color: white;
+    }
+    footer {
+        display: flex; 
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-evenly;
+        padding: 3px;
+        background-color: lightskyblue;
+    }
+}

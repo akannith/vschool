@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Pest Control</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header>
+        <img src="mario company logo.png" height="250px" width="250px"/>
+        <h1>Mario Pest Control</h1>
+    </header>
+    <main>
+        <div>
+            <h3>Each Monster's price:</h3>
+            <ul class="price">
+                <li>        <img src="goomba.png" width="20px" alt=""> Goombas: 5 Coins</li>
+                <li>        <img src="bob-omb.png" width="25px" alt=""> Bob-ombs: 7 Coins</li>
+                <li>        <img src="cheep-cheeps.png" width="20px" alt=""> Cheep-cheeps: 11 Coins</li>
+            </ul>
+        </div>
+        <div class="positionTwo">
+            <form id="monstersForm">
+                <h3>Monsters Caught:</h3>
+                <label>How many Goombas?</label>
+                <input name="goombas" type="number"><br>
+                <label>How many Bob-ombs?</label>
+                <input name="bobombs" type="number"><br>
+                <label>How many Cheep-cheeps?</label>
+                <input name="cheepcheeps" type="number"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+       <h4>
+         <img id="coins" src="coin1.png" width=" 20px">
+         <p id="totalCost"></p>
+       </h4>
+    </main>  
+    <footer>
+        <img id="superstar" src="super star.png"/>
+        <p id="websiteUrl">Website: <a href= "index.html">MarioPestControl.com</a></p>        
+        <p id="address">Address: 100 Fireball Ln, Mushroom Kingdom</p>
+        <p id="email">Email us at: <a href= "mario@mariopestcontrol.com">mario@mariopestcontrol.com</a></p>
+        <img id="yoshi" src="yoshi tongue.png"/>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
