@@ -1,0 +1,17 @@
+.cardsContainer {
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+}
+.container {
+     position: flex;
+     border-color: black;
+     border-style: dashed;
+}
+
+
+.container--place {
+
+position: flex
+
+
+}

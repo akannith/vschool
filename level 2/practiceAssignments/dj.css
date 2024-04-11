@@ -1,0 +1,23 @@
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: aquamarine;
+    margin: auto;
+    border: 1px solid #333;
+    box-shadow: 10px 10px 15px 0 #999;
+    border-radius: 10%;
+}
+
+.box:hover {
+    background-color:bisque;
+    border: 2px solid blue;
+    border-radius: 15%;
+    box-shadow: black;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+    padding: 50px;
+    position: static;
+    opacity: inherit;
+    transition: background-colour 2s linear 2s, width 2s linear;
+}

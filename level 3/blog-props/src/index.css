@@ -1,0 +1,11 @@
+.backgroundImage {
+    background-size: cover;
+    background-image: url("./home-bg.jpg");
+    height: 320px;
+    width: 100%;
+}
+
+.Nav{
+    position: center;
+    
+}
