@@ -1,0 +1,47 @@
+.Header {
+    display: inline;
+    margin-right: 10%;
+    margin-left: 10%;
+    
+  }
+
+.container {
+    border: solid;
+}
+
+.Container2 {
+    height: 300px;
+    margin-top: 10%;
+    margin-left: 30%;
+   
+}
+
+    
+  .light-theme {
+    background-color: #cfcfcf;
+    color: #000;
+  }
+  
+  .dark-theme {
+    background-color: #3a3b3c;
+    color: #fff; 
+  }
+
+  /* div, button { 
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+  
+Button {
+ width: 300px;
+ padding: 5px 10px; 
+ margin: 5px 0px; 
+ border: solid;
+  }
+  
+.Footer {
+   display: grid;
+    border: solid;
+    justify-content: center;
+    
+  }
