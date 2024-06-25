@@ -2,12 +2,63 @@
 const words = ['listen', 'silent', 'dog', 'god', 'hello', 'world'];
 const target = 'enlist';
 
-const st1 = str1.split('')
-const st2 = str2.split('')
 
-const item = st1.filter((v)=>!st2.includes(v))
+// function filterAnagrams(word_Array, target) {
+//     let word_Array= word.split('').sort()
+//     let total = []
+//     for (x = 0; x<words.length; x++) {
+//        if(words[x].split('').sort() === word_Array) {
+//       total.push(words[x])
+//     } return total 
+//    }
+// }
 
-const result = item.length === 0 ? 'Anagram' : 'Not anagram' + ' Difference - ' + item;
+// const anagrams = filterAnagrams(words, target);
+// // console.log(anagrams); // Output: ['listen', 'silent']
 
-console.log(result)
+// const sort = (word) => word.split('').sort().join('');
 
+// function filterAnagrams(word, target) {
+//   let token = sort(target);
+//   let total = []
+
+//   for (let x = 0; x < word.length; x++) {
+//     if (sort(word[x]) === token) {
+//       total.push(word[x])
+//     }    
+//   }
+  
+//   return total
+// }
+
+// const anagrams = filterAnagrams(words, target);
+// console.log(anagrams); // Output: ['listen', 'silent']
+
+
+
+
+
+// const words = ['listen', 'silent', 'dog', 'god', 'hello', 'world'];
+// const target = 'enlist';
+
+// const st1 = str1.split('')
+// const st2 = str2.split('')
+
+// const item = st1.filter((v)=>!st2.includes(v))
+
+// const result = item.length === 0 ? 'Anagram' : 'Not anagram' + ' Difference - ' + item;
+
+// console.log(result)
+
+
+const people =[];
+    
+    people.push({ name: 'Alice', age: 30 })
+    people.push({ name: 'Bob', age: 25 })
+    people.push ({ name: 'Charlie', age: 35 })
+    people.push({ name: 'David', age: 25 });
+
+    const sortedPeople = people.sort((a, b) => a.age-b.age);
+    console.log(sortedPeople)
+
+    

@@ -1,0 +1,48 @@
+.navbar {
+    display: inline-flex;
+    gap: 50px;
+    border: rgb(182, 8, 8) solid;
+    background-color: rgb(247, 86, 161);
+    width: 1450px;
+    text-indent: 10px;
+    padding:45px 30px ;
+   
+}
+
+.description {
+    display: grid;
+    background-color: pink;
+    margin: 0px;
+    padding: 40px;
+    font-size: x-large;
+   
+}
+.body {
+    background-image: url("backgroundimages.jpeg" );
+    background-repeat:round;
+    background-size:contain;
+    height: 80vh;
+     width: 100%;
+   
+}
+
+.button {
+    border: solid rgb(227, 43, 190);
+    background-color: pink;
+    height: 50px;
+    width: 1000px;
+    font-size: large;
+}
+
+.NavButtons {
+    border: solid red;
+    display: flex;
+    background-color: palevioletred;
+}
+.flavourList {
+    display: flexbox;
+    position: ;
+    border: solid rgb(227, 43, 190);
+    background-color: pink;
+    margin: 0px;
+}
