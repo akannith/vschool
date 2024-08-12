@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 
+
 //Bounty Blueprint
 
 const bountySchema =new Schema({

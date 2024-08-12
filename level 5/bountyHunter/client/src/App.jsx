@@ -35,8 +35,8 @@ import AddBountyForm from "./components/AddBountyForm.jsx"
         .then(res => {
             console.log(res.data)
             setBounties(prevBounties => prevBounties.map (bounty => bounty._id !== bountyId ? bounty : res.data))
-        })
         .catch(err => console.log(err))
+        })
     }
     useEffect(() => {
         getBounties()

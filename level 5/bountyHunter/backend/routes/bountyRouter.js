@@ -32,13 +32,9 @@ const bounties = [
   ];
 
 
-bountyRouter.route("/")
-.get(async(req, res) => {
-    res.send(bounties);
-})
+  
 
-
-.get(async(req, res, next) => {
+bountyRouter.get('/', async(req, res, next) => {
   try {
     const foundBounties = await Bounty.find()
     return res.status(200).send(foundBounties)
@@ -46,6 +42,31 @@ bountyRouter.route("/")
      res.status(500)
      return next(error)
   }
+}
+)
+
+bountyRouter.get('/:bountyId', async(req, res, next) => {
+  try {
+    const bountyId= req.params.bountyId
+    const foundBounty = await Bounty.findById({_id: bountyId})
+    return res.status(200).send(foundBounty)
+  } catch (error) {
+     res.status(500)
+     return next(error)
+  }
+}
+)
+
+    // const bountyId= req.params.bountyId
+  // const foundBounty = bounties.findIndex(bounty => bounty._id === bountyId)
+  // if(!foundBounty){
+  //  const error = new Error("The item was not found")
+  //  return next(error)
+  // }
+  // res.send(foundBounty)
+    
+
+
   // const bountyId= req.params.bountyId
   // const foundBounty = bounties.findIndex(bounty => bounty._id === bountyId)
   // if(!foundBounty){
@@ -53,13 +74,14 @@ bountyRouter.route("/")
   //  return next(error)
   // }
   // res.send(foundBounty)
-})
 
-.post(async(req, res, next) => {
+  // res.send(bounties);
+
+bountyRouter.post('/', async(req, res, next) => {
   try {
     const newBounty= new Bounty(req.body)
     const savedBounty = await newBounty.save()
-    return res.status(201). send(savedBounty)
+    return res.status(201).send(savedBounty)
   } catch (error) {
      res.status(500)
      return next(error)
