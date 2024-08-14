@@ -3,6 +3,7 @@ const app= express()
 const morgan= require("morgan")
 const mongoose=require('mongoose')
 require ("dotenv").config()
+const {expressjwt} = require('express-jwt')
  
 //middleware
 app.use(express.json())
@@ -21,6 +22,8 @@ async function connectToDB() {
 connectToDB()
 
 //Routes
+app.use('/api/auth', require('./routes/cafeAuthRouter'))
+app.use('/api/main', expressjwt({secret: process.env.SECRET, algorithms: ['HS256']}))
 app.use("/cafes", require ("./routes/cafeRouter.js"))
 
 // error hander
@@ -28,6 +31,6 @@ app.use((err, req, res, next) => {
     console.log(err)
     return res.send ({errMgs: err.message})
 })
-app.listen(9000, () =>{
-    console.log("server is ruuning on port 9000")
+app.listen(process.env.PORT, () =>{
+    console.log(`Server is running on port ${process.env.PORT}`)
 })
