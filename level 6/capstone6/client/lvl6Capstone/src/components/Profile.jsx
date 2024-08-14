@@ -1,10 +1,11 @@
 import React, {useContext, useEffect} from 'react';
 import { UserContext } from '../context/UserProvider';
 import ItemForm from './ItemForm';
+import ItemList from './ItemList';
 
 
 function Profile(props) {
-    const {user, getUserItems,} = useContext(UserContext)
+    const {user, item, getUserItems,} = useContext(UserContext)
     const {userId} = props
 
 
@@ -22,12 +23,10 @@ function Profile(props) {
         <>
         <h1>User: {user.username} </h1>
         <ItemForm />
-        <div>
-        
-        </div>
+        <ItemList items= {item} />
         { isUser && (
         <div>
-        <h1> {getUserItems} </h1>
+       
         </div>
         )}
         </>

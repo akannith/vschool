@@ -31,7 +31,7 @@ export default function Item(props) {
             </>
              )}
            <div>
-            <ItemForm  itemId= {_id}/>
+           
             <UserReviewForm itemId= {_id} />
             <UserReviewList itemId= {_id} />
             

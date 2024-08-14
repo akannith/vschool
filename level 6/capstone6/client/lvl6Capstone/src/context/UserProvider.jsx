@@ -17,7 +17,8 @@ function UserProvider(props) {
     const initState = {
         user : JSON.parse(localStorage.getItem("user")) || {},
         token : localStorage.getItem("token") || "",
-        errMgs: ""
+        errMgs: "",
+        item: []
     }
 
     const [userState, setUserState] = useState(initState)

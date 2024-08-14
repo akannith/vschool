@@ -15,6 +15,16 @@ itemRouter.get('/', async (req, res, next) => {
     }
 })
 
+itemRouter.get('/user', async (req, res, next) => {
+    try {
+        const items= await Item.find({userId:req.auth._id}) 
+        return res.status(200).send(items)
+    } catch (error) {
+        res.status(500)
+        return next(error)
+    }
+})
+
 itemRouter.get('/:itemId', async (req, res, next) => {
     try {
         const foundItems = await Item.findById(req.params.itemId)
@@ -25,6 +35,9 @@ itemRouter.get('/:itemId', async (req, res, next) => {
         return next(error)
     }
 })
+
+
+
 
 //post
 
