@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import axios from 'axios'
 
 
@@ -96,29 +96,39 @@ function UserProvider(props) {
             }
     })}
 
-    async function getUserItems() {
-        try {
-            const res = await userAxios.get('/api/main/items/user')
-            setUserState(prevUserState => {
-                return{
-                    ...prevUserState,
-                    item: res.data
-                }
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
-    async function getItems() {
-        try {
-            const res = await userAxios.get('/api/main/items')
-            setItemState(res.data)
-        } catch (error) {
-            console.log(error)
+   
+
+        async function getUserItems() {
+            try {
+                const res = await userAxios.get('/api/main/items/user')
+                setUserState(prevUserState => {
+                    return{
+                        ...prevUserState,
+                        item: res.data
+                    }
+                })
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-    
+   
+
+        async function getItems() {
+            try {
+                const res = await userAxios.get('/api/main/items')
+                setItemState(res.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        
+        useEffect(() => {
+           getItems()
+           getUserItems() 
+        }, [itemState])
+
+
     async function addItem(newItem){
         try {
             const res = await userAxios.post('/api/main/items', newItem)
@@ -131,6 +141,24 @@ function UserProvider(props) {
             console.log(error)
         }
     }
+
+    async function editItem(updates, itemId) {
+        try {
+            const res = await userAxios.put(`/api/main/items/${itemId}`, updates)
+            setItemState(prevState => prevState.map(item => item._id === itemId ? item : res.data))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async function deleteItem(itemId){
+        try{
+            const res = await userAxios.delete(`api/main/items/${itemId}`)
+            setItemState(prevState => prevState.filter(item => item._id !== itemId))
+        }catch (error) {
+                console.log(error)
+            }
+        }
 
    async function addReview(newReview, itemId) {
     try {
@@ -154,8 +182,18 @@ function UserProvider(props) {
         console.log(error)
     }
    }
-
-
+   async function deleteReview(reviewId) {
+    try{
+        //delete item from database
+        const res = await userAxios.delete(`api/main/reviews/${reviewId}`)
+        //delete item from state
+        setReviewState(prevState => prevState.filter(item => item._id !== reviewId))
+    }catch (error) {
+            console.log(error)
+        }
+       
+    
+    }
 
 
     return(
@@ -170,9 +208,14 @@ function UserProvider(props) {
             itemState,
             getItems,
             addItem, 
+            editItem,
+            deleteItem,
             reviewState,
             addReview,
+            deleteReview,
+            editReview,
             getAllReviews
+          
             }}>
 
             {props.children}

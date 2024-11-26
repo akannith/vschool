@@ -22,7 +22,7 @@ const itemSchema = new Schema({
     username: {
         type: String,
         required: true
-    },
+    }
 })
 
 module.exports = mongoose.model("Item", itemSchema)
